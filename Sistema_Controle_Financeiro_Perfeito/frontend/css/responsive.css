@@ -1,0 +1,220 @@
+/* Responsive styles for the Sistema de Controle Financeiro */
+
+/* Base styling */
+body {
+    transition: all 0.3s ease;
+}
+
+/* Table styles for mobile */
+@media (max-width: 767.98px) {
+    /* Expand/collapse for table cells */
+    .expandable-cell {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100px;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .expandable-cell.expanded {
+        white-space: normal;
+        max-width: none;
+    }
+    
+    .expandable-cell:after {
+        content: '...';
+        position: absolute;
+        right: 0;
+        background: linear-gradient(to right, transparent, white 40%);
+        padding-left: 20px;
+    }
+    
+    .expandable-cell.expanded:after {
+        display: none;
+    }
+    
+    /* Hide non-critical columns */
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    /* Make mobile header more useful */
+    .mobile-header {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+    }
+    
+    /* Prioritize filter button in header */
+    .mobile-filter-btn {
+        display: block !important;
+    }
+    
+    .desktop-filter-btn {
+        display: none !important;
+    }
+    
+    /* Adjust cards for better mobile view */
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    /* Table adjustments */
+    .table thead th {
+        font-size: 0.8rem;
+    }
+    
+    .table tbody td {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+    
+    /* Action buttons in tables */
+    .table .btn-sm {
+        padding: 0.25rem 0.4rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Dropdown for action menus */
+    .dropdown-actions {
+        display: inline-block;
+    }
+    
+    /* Better modals on mobile */
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+    
+    .modal-content {
+        border-radius: 0.2rem;
+    }
+    
+    /* Pagination adjustments */
+    .pagination .page-link {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Tablet specific adjustments */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Slightly better table layout */
+    .table-responsive {
+        overflow-x: auto;
+    }
+    
+    /* Better sidebar for tablets */
+    .sidebar {
+        width: 200px;
+    }
+    
+    main {
+        margin-left: 200px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Improved sidebar styles for all devices */
+.sidebar {
+    padding: 0;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.sidebar .sidebar-header {
+    padding: 1rem;
+    background-color: #4361ee;
+    color: white;
+    text-align: center;
+}
+
+.sidebar .nav-link {
+    padding: 0.75rem 1rem;
+    color: #495057;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: #f8f9fa;
+    border-left-color: #4361ee;
+}
+
+.sidebar .nav-link .bi {
+    margin-right: 0.5rem;
+}
+
+/* Mobile sidebar toggle behaviors */
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 80%;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .sidebar-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 99;
+        display: none;
+    }
+    
+    .sidebar-backdrop.active {
+        display: block;
+    }
+    
+    .sidebar-toggle {
+        background-color: transparent;
+        border: none;
+        font-size: 1.25rem;
+        line-height: 1;
+        cursor: pointer;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    /* Adjust modal full width on mobile */
+    .modal-fullscreen-sm-down {
+        padding: 0 !important;
+    }
+    
+    .modal-fullscreen-sm-down .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+    }
+    
+    .modal-fullscreen-sm-down .modal-content {
+        height: 100%;
+        border: 0;
+        border-radius: 0;
+    }
+    
+    .modal-fullscreen-sm-down .modal-body {
+        overflow-y: auto;
+    }
+}

@@ -1,0 +1,446 @@
+/* Custom styles for Sistema de Controle Financeiro */
+
+:root {
+    --primary-color: #3949ab;
+    --primary-light: #6f74dd;
+    --primary-dark: #00227b;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --bs-border-radius: 0.5rem;
+    --sidebar-width: 280px;
+    --sidebar-width-collapsed: 70px;
+    --header-height: 60px;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Navbar customization */
+.navbar-dark.bg-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Cards enhancement */
+.card {
+    border-radius: 0.7rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Buttons styling */
+.btn {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn-success {
+    background: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+/* Table improvements */
+.table {
+    vertical-align: middle;
+}
+
+.table thead th {
+    border-top: none;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    color: #495057;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.03);
+}
+
+/* Status badges */
+.badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.4em 0.8em;
+    border-radius: 0.25rem;
+}
+
+.badge-pago {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.badge-pendente {
+    background-color: var(--warning-color);
+    color: #212529;
+}
+
+.badge-cancelado {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* Filter tags */
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e9ecef;
+    color: #495057;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.filter-tag .bi-x {
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+/* Form controls enhancement */
+.form-control, .form-select {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.25rem rgba(57, 73, 171, 0.25);
+}
+
+/* Date picker customization */
+.flatpickr-calendar {
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Pagination customization */
+.page-item .page-link {
+    color: var(--primary-color);
+    border-radius: 0.25rem;
+    margin: 0 0.2rem;
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Modal enhancements */
+.modal-content {
+    border-radius: 0.7rem;
+    border: none;
+}
+
+.modal-header {
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+    background: var(--light-color);
+}
+
+/* Action buttons in table */
+.btn-action {
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    margin-left: 0.25rem;
+}
+
+/* Enhanced sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    background-color: white;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: transform var(--transition-speed), width var(--transition-speed);
+    z-index: 1030;
+}
+
+.sidebar-heading {
+    padding: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.sidebar .nav-link {
+    color: #495057;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+    border-radius: 0;
+}
+
+.sidebar .nav-link.active {
+    background-color: rgba(57, 73, 171, 0.1);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(57, 73, 171, 0.05);
+}
+
+.sidebar .nav-link i {
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.sidebar .nav-link.active i {
+    color: var(--primary-color);
+}
+
+.content {
+    margin-left: var(--sidebar-width);
+    transition: margin-left var(--transition-speed);
+    padding: 1rem;
+}
+
+.sidebar-collapsed .sidebar {
+    width: var(--sidebar-width-collapsed);
+}
+
+.sidebar-collapsed .content {
+    margin-left: var(--sidebar-width-collapsed);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: #6c757d;
+    font-size: 1.25rem;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.sidebar-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 991.98px) {
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: none;
+    }
+    
+    .sidebar.show {
+        transform: translateX(0);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+    
+    .content {
+        margin-left: 0;
+    }
+    
+    .sidebar-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1025;
+        display: none;
+    }
+    
+    .sidebar.show + .sidebar-backdrop {
+        display: block;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .table-responsive {
+        border-radius: 0.5rem;
+    }
+    
+    .btn {
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .sidebar {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .page-item .page-link {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .action-btn {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    h1, .h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2, .h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3, .h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container-fluid {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .table thead th {
+        font-size: 0.8rem;
+    }
+    
+    .table tbody td {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+    
+    .modal-title {
+        font-size: 1.25rem;
+    }
+    
+    .btn-action {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+}
+
+/* Make sure tables are responsive on mobile */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Fix for image display issues */
+img {
+    max-width: 100%;
+}
+
+/* Error message styling */
+.error-message {
+    border-left: 4px solid var(--danger-color);
+    padding: 0.5rem 1rem;
+    background-color: rgba(220, 53, 69, 0.1);
+    margin-bottom: 1rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/* Improve toasts for better visibility */
+.toastify {
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15) !important;
+    padding: 1rem !important;
+}
+
+/* Add a subtle hover effect to all interactive elements */
+button, a, input[type="button"], input[type="submit"] {
+    transition: all 0.2s ease;
+}
+
+/* Make sure forms are properly responsive */
+.form-group, .mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+/* Handle touch devices better */
+@media (hover: none) and (pointer: coarse) {
+    .btn, .nav-link {
+        padding: 0.75rem 1rem;
+    }
+    
+    .form-control, .form-select {
+        min-height: 45px;
+    }
+    
+    input[type=checkbox], input[type=radio] {
+        min-width: 22px;
+        min-height: 22px;
+    }
+}
+
+/* Better accessibility - focus states */
+:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(57, 73, 171, 0.25);
+}

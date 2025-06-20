@@ -1,0 +1,98 @@
+/* Mobile-specific styles for tables */
+
+/* Base styles for small screens */
+@media (max-width: 767.98px) {
+    /* Make tables more compact */
+    .table th, 
+    .table td {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Headers */
+    .table thead th {
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+    
+    /* Prioritize important columns */
+    .table .priority-high {
+        font-weight: bold;
+    }
+    
+    .table .priority-medium {
+        color: inherit; /* Default styling but not empty */
+    }
+    
+    .table .priority-low {
+        display: none;
+    }
+    
+    /* Expandable cell styling */
+    .expandable-cell {
+        position: relative;
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .expandable-cell.expanded {
+        white-space: normal;
+        max-width: none;
+        overflow: visible;
+    }
+    
+    /* Visual indicator that cell is expandable */
+    .expandable-cell:after {
+        content: '⋯';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #007bff;
+        font-weight: bold;
+        background: linear-gradient(to right, transparent, white 40%);
+        padding-left: 15px;
+    }
+    
+    .expandable-cell.expanded:after {
+        display: none;
+    }
+    
+    /* Dropdown menu for actions */
+    .dropdown-actions .dropdown-menu {
+        min-width: auto;
+        padding: 0.25rem 0;
+    }
+    
+    .dropdown-actions .dropdown-item {
+        padding: 0.4rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Action buttons */
+    .btn-action {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Stack buttons in action column */
+    .action-column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    /* Mobile row highlight */
+    .mobile-row-highlight {
+        background-color: rgba(0, 123, 255, 0.05);
+    }
+    
+    /* Mobile popover for details */
+    .mobile-detail-popover {
+        max-width: calc(100vw - 30px);
+    }
+}
